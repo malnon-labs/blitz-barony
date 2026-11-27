@@ -35,7 +35,7 @@ Write-Host "Barony folder: $BaronyPath"
 $backup = Join-Path $BaronyPath "_blitz_backup"
 New-Item -ItemType Directory -Force $backup | Out-Null
 $absentFile = Join-Path $backup "absent.txt"
-$absent = @(); if (Test-Path $absentFile) { $absent = @(Get-Content $absentFile) }
+$absent = @(); if (Test-Path $absentFile) { $absent = @(Get-Content $absentFile | Where-Object { $_ }) }
 
 $files = Get-ChildItem $payload -Recurse -File
 foreach ($f in $files) {
@@ -47,7 +47,7 @@ foreach ($f in $files) {
         if (-not $same) {   # current file is not ours yet: it is vanilla (or a fresh Steam copy), so keep it as the backup
             New-Item -ItemType Directory -Force (Split-Path $bak) | Out-Null
             Copy-Item $dst $bak -Force
-            $absent = $absent | Where-Object { $_ -ne $rel }
+            $absent = @($absent | Where-Object { $_ -ne $rel })
         }
     } else {
         if ($absent -notcontains $rel) { $absent += $rel }
@@ -56,7 +56,7 @@ foreach ($f in $files) {
     Copy-Item $f.FullName $dst -Force
     Write-Host "  installed $rel"
 }
-Set-Content $absentFile $absent
+Set-Content $absentFile @($absent)
 
 # keep vanilla and Blitz saves apart
 $marker = Join-Path $BaronyPath ".blitz_on"
