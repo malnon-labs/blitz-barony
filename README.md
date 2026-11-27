@@ -1,14 +1,17 @@
 # Blitz Barony
 
-A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2). A full run has about **half as many floors** (24 instead of ~35), so a co-op run that normally takes around five hours should fit in roughly half the time. Every secret level is still in the game.
-
-Experience, skill gain, gold, loot, shops and minotaurs have all been adjusted so the game balance stays the same as vanilla, even though there are fewer floors. You should reach about the same power level at the same point of the story. The exact changes are listed at the [bottom of this page](#detailed-changes).
+A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2). It makes the game shorter by removing stages and tweaking XP and gold values (along with a few other things), so the balance stays the same as vanilla. The details are listed at the [bottom of this page](#detailed-changes).
 
 > **Status: private test build.** It is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
 
 ## Install
 
 The installer is a small menu that backs up every file it replaces, installs the mod, and can put vanilla back at any time. Your vanilla saves and your Blitz saves are kept apart.
+
+<p align="center">
+  <img src="docs/linux-install.png" alt="Blitz Barony menu in a terminal, after pressing 1 to install" width="70%"><br>
+  <em>The installer menu after pressing 1 (shown in a Linux terminal; the Windows menu offers the same options).</em>
+</p>
 
 ### Windows (Steam)
 
@@ -31,9 +34,6 @@ Works for the native Linux Barony and for the Windows Barony under Proton.
    (Double-clicking it does nothing in some file managers, such as KDE Dolphin.)
 4. Press **1** to install, then start Barony from Steam. The main menu should show **v5.0.2-blitz**.
 
-<p align="center">
-  <img src="docs/linux-install.png" alt="Blitz Barony menu in a Linux terminal, after pressing 1 to install" width="70%">
-</p>
 
 ### Going back to vanilla
 
