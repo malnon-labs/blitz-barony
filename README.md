@@ -83,7 +83,7 @@ Use menu option **3** (Collect logs) right after the problem, before starting Ba
 
 ## Credits and license
 
-Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. The overview images above use screenshots and artwork from Barony and the [BaronyGame wiki](https://baronygame.fandom.com/), which belong to Turning Wheel. Barony's game files, art and sound are **not** included in the mod itself; the installer only adds the modified executable, a few libraries it needs, and three small data files.
+Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. The overview images use screenshots and artwork from Barony and the [BaronyGame wiki](https://baronygame.fandom.com/), which belong to Turning Wheel. Barony's game files, art and sound are **not** included in the mod itself; the installer only adds the modified executable, a few libraries it needs, and three small data files.
 
 ---
 
@@ -92,12 +92,8 @@ Barony is made by Turning Wheel, and its source code is released under the BSD 2
 ### Overview
 
 <p align="center">
-  <img src="docs/overview-1-floors.png" alt="The 24 floors by biome: floors, vanilla depths and secrets" width="100%"><br><br>
-  <img src="docs/overview-2-xp-gold-skills.png" alt="XP multiplier by floor, gold x1.8 and skill gain x1.9" width="100%"><br><br>
-  <img src="docs/overview-3-minotaurs-shops.png" alt="Minotaur and shop chances and how many to expect per run" width="100%">
+  <img src="docs/overview-1-floors.png" alt="The 24 floors by biome: floors, vanilla depths and secrets" width="100%">
 </p>
-
-The tables below have the same information in text form.
 
 ### Floors
 
@@ -147,6 +143,10 @@ Floors 1, 5, 19 and 22 (the first floor of the Mines, Swamp, Caves and Citadel) 
 
 ### Experience, skills and gold
 
+<p align="center">
+  <img src="docs/overview-2-xp-gold-skills.png" alt="XP multiplier by floor, gold x1.8 and skill gain x1.9" width="100%">
+</p>
+
 - **Experience** is multiplied by a value that grows with depth, so early floors give about the vanilla amount and later floors give more to make up for the floors that are gone. The curve is interpolated linearly between these points:
 
   | Vanilla depth | 1 | 5 | 8 | 10 | 26 | 35 |
@@ -170,6 +170,10 @@ Floors 1, 5, 19 and 22 (the first floor of the Mines, Swamp, Caves and Citadel) 
 - Hunger and regeneration are per-time mechanics and were left alone.
 
 ### Shops
+
+<p align="center">
+  <img src="docs/overview-3-minotaurs-shops.png" alt="Minotaur and shop chances and how many to expect per run" width="100%">
+</p>
 
 Shops can appear on 13 eligible floors. Each eligible floor rolls **60%** independently. Hell never has a shop.
 
