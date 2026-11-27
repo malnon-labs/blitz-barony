@@ -2,6 +2,8 @@
 
 A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2). It makes the game shorter by removing stages and tweaking XP and gold values (along with a few other things), so the balance stays the same as vanilla. The details are listed at the [bottom of this page](#detailed-changes).
 
+**Why this mod exists:** a full Barony run can easily take 8 hours. You grind the early floors down to every single gold pile, then spend the rest of the game bored, wiping out enemies with ease and still searching each floor for the exit. If that sounds like you, this mod can save you a lot of wasted time. It also does not disable Steam achievements.
+
 What changes:
 
 - **Number of floors:** fewer floors per biome. Monsters and loot on each floor still match the vanilla depth that floor stands in for.
