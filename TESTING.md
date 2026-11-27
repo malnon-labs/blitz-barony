@@ -1,6 +1,6 @@
 # Testing Blitz Barony
 
-Thanks for testing. The main question right now: **does hosting and joining an online (Steam) lobby work without crashing?** Earlier builds crashed or refused to start because of mismatched Steam interface versions; v0.1.2 hosts a lobby fine on a Windows 11 test PC (solo host). Still untested: a second player joining.
+Thanks for testing. The main question right now: **does hosting and joining an online (Steam) lobby work without crashing?** Earlier builds crashed or refused to start because of mismatched Steam interface versions; v0.1.2 hosts a lobby fine on a Windows 11 test PC (solo host).
 
 ## Before you start
 1. Install as described in blitz-mod\README.md (extract the zip into the Barony folder, double-click BLITZ BARONY.bat and press 1). Check the main menu shows `v5.0.2-blitz`.
@@ -39,4 +39,3 @@ If the game just closes with no message, look in `Barony\crashlogs\` anyway.
 
 ## Known harmless messages
 - `failed hash check` lines in `log.txt` for lock-room submaps appear in the vanilla-based maps too.
-- Steam achievements do not unlock (modded files).

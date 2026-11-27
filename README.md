@@ -11,8 +11,9 @@ What changes:
 - **XP:** scaled up with depth to make up for the missing floors.
 - **Gold:** scaled up on the randomly generated floors.
 - **Skills:** skill gain is scaled up.
+- **Achievements:** stay enabled.
 
-> **Status: private test build.** It is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
+> This is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
 
 ## Install
 
@@ -52,8 +53,8 @@ Open the same menu and press **2**. Every original file is put back, the mod's f
 ## Multiplayer
 
 - Everyone in a game needs the **same install**. The game version is `v5.0.2-blitz`, so vanilla clients cannot join a Blitz lobby, and the other way round.
-- Steam lobbies work. Hosting an online lobby has been tested on Windows 11 and on Linux (Proton). A second player joining has not been tested yet.
-- Steam achievements are disabled while the mod is installed.
+- Steam lobbies work. Hosting an online lobby has been tested on Windows 11 and on Linux (Proton).
+- Steam achievements keep working while the mod is installed (cheats still disable them, as in vanilla).
 - Saves from vanilla do not carry over. Start a new game.
 
 ## Reporting a problem
@@ -63,7 +64,6 @@ Use menu option **3** (Collect logs) right after the problem, before starting Ba
 ## Known issues
 
 - The `/jumplevel` cheat command does not work. Use `/gotolevel <floor>` instead (after `/enablecheats`), for example `/gotolevel 5`.
-- A second player joining a Blitz lobby has not been tested yet.
 
 ## Credits and license
 
