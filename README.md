@@ -83,11 +83,21 @@ Use menu option **3** (Collect logs) right after the problem, before starting Ba
 
 ## Credits and license
 
-Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. Barony's game files, art and sound are **not** included here; the installer only adds the modified executable, a few libraries it needs, and three small data files.
+Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. The overview images above use screenshots and artwork from Barony and the [BaronyGame wiki](https://baronygame.fandom.com/), which belong to Turning Wheel. Barony's game files, art and sound are **not** included in the mod itself; the installer only adds the modified executable, a few libraries it needs, and three small data files.
 
 ---
 
 ## Detailed changes
+
+### Overview
+
+<p align="center">
+  <img src="docs/overview-1-floors.png" alt="The 24 floors by biome: floors, vanilla depths and secrets" width="100%"><br><br>
+  <img src="docs/overview-2-xp-gold-skills.png" alt="XP multiplier by floor, gold x1.8 and skill gain x1.9" width="100%"><br><br>
+  <img src="docs/overview-3-minotaurs-shops.png" alt="Minotaur and shop chances and how many to expect per run" width="100%">
+</p>
+
+The tables below have the same information in text form.
 
 ### Floors
 
