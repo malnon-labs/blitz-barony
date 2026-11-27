@@ -60,6 +60,11 @@ Open the same menu and press **2**. Every original file is put back, the mod's f
 
 Use menu option **3** (Collect logs) right after the problem, before starting Barony again, and send the file it creates. See [TESTING.md](TESTING.md) for a short test checklist and a report template.
 
+## Known issues
+
+- The `/jumplevel` cheat command does not work. Use `/gotolevel <floor>` instead (after `/enablecheats`), for example `/gotolevel 5`.
+- A second player joining a Blitz lobby has not been tested yet.
+
 ## Credits and license
 
 Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. Barony's game files, art and sound are **not** included here; the installer only adds the modified executable, a few libraries it needs, and three small data files.
@@ -184,5 +189,5 @@ Number of minotaur floors in a full run (calculated from the 49% rolls):
 ### Other
 
 - The version string is `v5.0.2-blitz`. Internally the multiplayer join packet carries a short `v5.0.2b` marker, because the packet only has room for 8 characters.
-- The cheat console still works after `/enablecheats`. `/gotolevel <n>` jumps to a floor from 1 to 24.
+- The cheat console works after `/enablecheats`. `/gotolevel <n>` jumps to a floor from 1 to 24; `/jumplevel` does not work (see Known issues).
 - The installer touches only these files: `barony.exe` (or `barony.x86_64`), four runtime DLLs on Windows, `maps/levels.txt`, `maps/secretlevels.txt` and `data/gameplaymodifiers.json`. Originals are copied to `_blitz_backup` in the game folder first.
