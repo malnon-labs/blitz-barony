@@ -1,5 +1,9 @@
 # Blitz Barony
 
+<p align="center">
+  <img src="docs/overview-1-floors.png" alt="The 24 floors by biome: floors, vanilla depths and secrets" width="100%">
+</p>
+
 A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2).
 
 **Why this mod exists:** a complete Barony run can easily swallow 8 hours. You scour the early floors for every last gold pile, then coast through the rest of the game flattening everything in your way, and you still have to hunt for the exit on every floor. If that sounds familiar, this mod can hand a lot of that time back to you. Steam achievements keep working.
@@ -88,12 +92,6 @@ Barony is made by Turning Wheel, and its source code is released under the BSD 2
 ---
 
 ## Detailed changes
-
-### Overview
-
-<p align="center">
-  <img src="docs/overview-1-floors.png" alt="The 24 floors by biome: floors, vanilla depths and secrets" width="100%">
-</p>
 
 ### Floors
 
