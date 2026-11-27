@@ -52,5 +52,14 @@ echo.
 echo   Something went wrong - see the message above and send a screenshot.
 :done
 echo.
+call :showstatus
+echo.
 pause
 goto menu
+:showstatus
+if exist ".blitz_on" goto ss_on
+echo   Status now: vanilla Barony ^(mod NOT installed^)
+exit /b
+:ss_on
+echo   Status now: Blitz mod is INSTALLED
+exit /b
