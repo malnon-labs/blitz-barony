@@ -2,6 +2,7 @@
 # Undo with restore-vanilla.bat. Safe to run again (e.g. after a Steam update or "Verify integrity").
 param([string]$BaronyPath = "")
 $ErrorActionPreference = "Stop"
+if ($BaronyPath) { $BaronyPath = [System.IO.Path]::GetFullPath($BaronyPath).TrimEnd("\") }
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $payload = Join-Path $here "payload"
 if (-not (Test-Path $payload)) { throw "payload folder not found next to this script. Extract the whole zip first." }
@@ -24,7 +25,10 @@ function Find-Barony {
     return $null
 }
 
-if (-not $BaronyPath) { $BaronyPath = Find-Barony }
+if (-not $BaronyPath -or -not (Test-Path (Join-Path $BaronyPath "barony.exe"))) {
+    if ($BaronyPath) { Write-Host "barony.exe not found in $BaronyPath - looking for your Steam copy of Barony..." }
+    $BaronyPath = Find-Barony
+}
 if (-not $BaronyPath -or -not (Test-Path (Join-Path $BaronyPath "barony.exe"))) {
     $BaronyPath = Read-Host "Could not find Barony automatically. Paste the folder that contains barony.exe"
 }

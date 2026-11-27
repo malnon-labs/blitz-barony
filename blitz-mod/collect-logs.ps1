@@ -1,7 +1,8 @@
 # Gathers what is needed to debug a Blitz Barony problem into one zip on your Desktop. Nothing is uploaded.
 param([string]$BaronyPath = "")
 $ErrorActionPreference = "Continue"
-if (-not $BaronyPath) {
+if ($BaronyPath) { $BaronyPath = [System.IO.Path]::GetFullPath($BaronyPath).TrimEnd("\") }
+if (-not $BaronyPath -or -not (Test-Path (Join-Path $BaronyPath "barony.exe"))) {
     $steam = (Get-ItemProperty "HKCU:\Software\Valve\Steam" -ErrorAction SilentlyContinue).SteamPath
     $cands = @(); if ($steam) { $cands += (Join-Path $steam "steamapps\common\Barony"); foreach ($m in [regex]::Matches((Get-Content (Join-Path $steam "steamapps\libraryfolders.vdf") -Raw -ErrorAction SilentlyContinue), '"path"\s+"([^"]+)"')) { $cands += (Join-Path $m.Groups[1].Value.Replace("\\", "\") "steamapps\common\Barony") } }
     foreach ($c in $cands) { if (Test-Path (Join-Path $c "barony.exe")) { $BaronyPath = $c; break } }

@@ -1,6 +1,7 @@
 # Restores the vanilla Barony files saved by install-blitz and removes the mod. Your vanilla saves come back; Blitz saves are kept aside.
 param([string]$BaronyPath = "")
 $ErrorActionPreference = "Stop"
+if ($BaronyPath) { $BaronyPath = [System.IO.Path]::GetFullPath($BaronyPath).TrimEnd("\") }
 function Find-Barony {
     $libs = @()
     $steam = (Get-ItemProperty "HKCU:\Software\Valve\Steam" -ErrorAction SilentlyContinue).SteamPath
@@ -12,7 +13,7 @@ function Find-Barony {
     foreach ($l in $libs) { $p = Join-Path $l "steamapps\common\Barony"; if (Test-Path (Join-Path $p "_blitz_backup")) { return $p } }
     return $null
 }
-if (-not $BaronyPath) { $BaronyPath = Find-Barony }
+if (-not $BaronyPath -or -not (Test-Path (Join-Path $BaronyPath "_blitz_backup"))) { $BaronyPath = Find-Barony }
 if (-not $BaronyPath) { $BaronyPath = Read-Host "Paste the Barony folder that contains _blitz_backup" }
 $backup = Join-Path $BaronyPath "_blitz_backup"
 if (-not (Test-Path $backup)) { throw "No _blitz_backup in '$BaronyPath': nothing to restore (or the mod was never installed there)." }
