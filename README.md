@@ -1,8 +1,10 @@
 # Blitz Barony
 
-A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2). It makes the game shorter by removing stages and tweaking XP and gold values (along with a few other things), so the balance stays the same as vanilla. The details are listed at the [bottom of this page](#detailed-changes).
+A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2).
 
-**Why this mod exists:** a full Barony run can easily take 8 hours. You grind the early floors down to every single gold pile, then spend the rest of the game bored, wiping out enemies with ease and still searching each floor for the exit. If that sounds like you, this mod can save you a lot of wasted time. It also does not disable Steam achievements.
+**Why this mod exists:** a complete Barony run can easily swallow 8 hours. You scour the early floors for every last gold pile, then coast through the rest of the game flattening everything in your way, and you still have to hunt for the exit on every floor. If that sounds familiar, this mod can hand a lot of that time back to you. Steam achievements keep working.
+
+It shortens the game by cutting out floors and retuning XP and gold (plus a few smaller tweaks), so the balance stays just like vanilla. The details are listed at the [bottom of this page](#detailed-changes).
 
 What changes:
 
@@ -68,6 +70,12 @@ Open the same menu and press **2**. Every original file is put back, the mod's f
 ## Reporting a problem
 
 Use menu option **3** (Collect logs) right after the problem, before starting Barony again, and send the file it creates. See [TESTING.md](TESTING.md) for a short test checklist and a report template.
+
+## Common mistakes
+
+- *"I subscribed to the Workshop item, why is nothing different?"* Subscribing only downloads the files. Run the installer (see Install above).
+- *Only the host installed it.* Every player needs the same install.
+- *Barony updated and the mod stopped working.* Press **2** (restore vanilla), then **1** (install) again, or verify the game files in Steam.
 
 ## Known issues
 
