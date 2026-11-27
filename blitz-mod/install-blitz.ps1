@@ -41,6 +41,7 @@ New-Item -ItemType Directory -Force $backup | Out-Null
 $absentFile = Join-Path $backup "absent.txt"
 $absent = @(); if (Test-Path $absentFile) { $absent = @(Get-Content $absentFile | Where-Object { $_ }) }
 
+$alreadyOn = Test-Path (Join-Path $BaronyPath ".blitz_on")   # updating: files in the game folder may already be ours, so never overwrite the vanilla backup
 $files = Get-ChildItem $payload -Recurse -File
 foreach ($f in $files) {
     $rel = $f.FullName.Substring($payload.Length).TrimStart("\", "/")
@@ -48,7 +49,7 @@ foreach ($f in $files) {
     $bak = Join-Path $backup $rel
     if (Test-Path $dst) {
         $same = (Get-FileHash $dst).Hash -eq (Get-FileHash $f.FullName).Hash
-        if (-not $same) {   # current file is not ours yet: it is vanilla (or a fresh Steam copy), so keep it as the backup
+        if (-not $same -and -not ($alreadyOn -and (Test-Path $bak))) {   # current file is not ours yet: it is vanilla (or a fresh Steam copy), so keep it as the backup
             New-Item -ItemType Directory -Force (Split-Path $bak) | Out-Null
             Copy-Item $dst $bak -Force
             $absent = @($absent | Where-Object { $_ -ne $rel })

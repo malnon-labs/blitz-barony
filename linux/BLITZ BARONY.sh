@@ -53,7 +53,7 @@ do_install() {
   while IFS=$'\t' read -r src rel; do
     dst="$BASE/$rel"
     if [ -e "$dst" ]; then
-      if ! cmp -s "$src" "$dst"; then            # not ours yet: it is the vanilla file, keep it as backup
+      if ! cmp -s "$src" "$dst" && ! { installed && [ -e "$bk/$rel" ]; }; then            # not ours yet: it is the vanilla file, keep it as backup
         mkdir -p "$(dirname "$bk/$rel")"; cp -a "$dst" "$bk/$rel"
         grep -vxF "$rel" "$bk/absent.txt" > "$bk/absent.tmp"; mv "$bk/absent.tmp" "$bk/absent.txt"
       fi
