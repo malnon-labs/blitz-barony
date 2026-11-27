@@ -10,7 +10,7 @@ cp "$SRC/build-steam/barony" "$M/payload-linux/barony.x86_64"
 cp "$SRC/build-win-steam/barony.exe" "$M/payload-windows/barony.exe"
 for d in libphysfs.dll libgcc_s_seh-1.dll libstdc++-6.dll libwinpthread-1.dll; do cp "$REL/$d" "$M/payload-windows/"; done
 cp "$REL/maps/"*.txt "$M/payload-common/maps/"; cp "$REL/data/gameplaymodifiers.json" "$M/payload-common/data/"
-cp "$H/linux/BLITZ BARONY.sh" "$H/linux/BLITZ BARONY.desktop" "$OUT/"; chmod +x "$OUT/BLITZ BARONY.sh" "$OUT/BLITZ BARONY.desktop"
+cp "$H/linux/BLITZ BARONY.sh" "$OUT/"; chmod +x "$OUT/BLITZ BARONY.sh"
 cp "$H/README.md" "$H/TESTING.md" "$M/"
 (cd "$OUT" && tar --owner=0 --group=0 -czf "$H/dist/Blitz-Barony-Linux-$V.tar.gz" .)
 echo "$H/dist/Blitz-Barony-Linux-$V.tar.gz"

@@ -36,5 +36,5 @@ Barony is by Turning Wheel and its source is BSD-2-Clause; this is an unofficial
 The Linux archive works for both the native Linux Barony and the Windows Barony under Proton.
 1. Steam > Barony > Manage > Browse local files, to open the game folder (it contains `barony.x86_64`, or `barony.exe` under Proton).
 2. Extract `Blitz-Barony-Linux-<version>.tar.gz` into it (`tar xzf Blitz-Barony-Linux-<version>.tar.gz -C <that folder>`).
-3. Close Barony and run **`BLITZ BARONY.sh`** (double-click and choose "Run in Terminal", or run it from a terminal). Press **1** to install, **2** to restore vanilla, **3** to collect logs, **4** to add a launcher with the Barony icon to your Desktop and application menu.
+3. Close Barony and run **`BLITZ BARONY.sh`** from a terminal: `cd` into the game folder and run `bash "BLITZ BARONY.sh"` (double-clicking it does nothing in some file managers, such as KDE Dolphin). Press **1** to install, **2** to restore vanilla, **3** to collect logs, **4** to add a launcher with the Barony icon to your Desktop and application menu.
 Backups go to `_blitz_backup/` in the game folder. Native Linux saves (`~/.barony/savegames`) and Proton saves (`<game folder>/savegames`) are kept separate for vanilla and Blitz.

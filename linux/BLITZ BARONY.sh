@@ -142,11 +142,6 @@ D
 
 find_base || { echo "Could not find your Steam Barony folder (no barony.x86_64 or barony.exe)."; echo "Extract this archive into it, then run this script again."; pause; exit 1; }
 chmod +x "$HERE/BLITZ BARONY.sh" 2>/dev/null
-# make the double-click launcher in this folder show the Barony icon
-if [ -f "$HERE/BLITZ BARONY.desktop" ] && [ -f "$BASE/Barony_Icon256x256.png" ]; then
-  sed -i "s|^Icon=.*|Icon=$BASE/Barony_Icon256x256.png|" "$HERE/BLITZ BARONY.desktop" 2>/dev/null
-  chmod +x "$HERE/BLITZ BARONY.desktop" 2>/dev/null
-fi
 
 while true; do
   clear
