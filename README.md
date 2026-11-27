@@ -21,11 +21,6 @@ What changes:
 
 The installer is a small menu that backs up every file it replaces, installs the mod, and can put vanilla back at any time. Your vanilla saves and your Blitz saves are kept apart.
 
-<p align="center">
-  <img src="docs/linux-install.png" alt="Blitz Barony menu in a terminal, after pressing 1 to install" width="70%"><br>
-  <em>The installer menu after pressing 1 (shown in a Linux terminal; the Windows menu offers the same options).</em>
-</p>
-
 ### Windows (Steam)
 
 1. In Steam, right-click Barony, choose **Manage**, then **Browse local files**. This opens the game folder (the one with `barony.exe`).
@@ -35,7 +30,18 @@ The installer is a small menu that backs up every file it replaces, installs the
 
 The menu also has **2** (restore vanilla), **3** (collect logs for a bug report) and **4** (put a shortcut with the Barony icon on your Desktop).
 
+<p align="center">
+  <img src="docs/windows-install.png" alt="Blitz Barony menu in a Windows terminal" width="70%"><br>
+  <em>The Windows menu.</em>
+</p>
+
+
 ### Linux (Steam)
+
+<p align="center">
+  <img src="docs/linux-install.png" alt="Blitz Barony menu in a Linux terminal after pressing 1 to install" width="70%"><br>
+  <em>The menu after pressing 1.</em>
+</p>
 
 Works for the native Linux Barony and for the Windows Barony under Proton.
 
@@ -140,8 +146,9 @@ Floors 1, 5, 19 and 22 (the first floor of the Mines, Swamp, Caves and Citadel) 
   | XP | 207% | 209% | 213% | 214% | 216% | 218% | 220% | 230% | 233% | 240% | 247% | 250% |
 
 - **Skill gain** is multiplied by 190% everywhere.
-- **Gold** is multiplied by 190% on the randomly generated floors (floor piles, pots and monster drops). The fixed secret maps keep their vanilla amounts. By design the total over a run is close to the vanilla main route.
+- **Gold** is multiplied by 180% on the randomly generated floors (floor piles, pots and monster drops). The fixed secret maps keep their vanilla amounts. By design the total over a run is close to the vanilla main route.
 - Monster levels, loot and item generation use the vanilla depth column above, not the floor number.
+- Dark floors keep the vanilla 25% chance, but the first floor of each biome is never dark.
 - Hunger and regeneration are per-time mechanics and were left alone.
 
 ### Shops
