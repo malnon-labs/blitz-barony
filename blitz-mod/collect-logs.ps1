@@ -18,7 +18,7 @@ $info += "windows: " + [System.Environment]::OSVersion.VersionString
 $info += "barony folder: $BaronyPath"
 $exe = Join-Path $BaronyPath "barony.exe"; if (Test-Path $exe) { $info += "barony.exe sha256: " + (Get-FileHash $exe).Hash; $info += "barony.exe size: " + (Get-Item $exe).Length }
 $info += "blitz installed marker: " + (Test-Path (Join-Path $BaronyPath ".blitz_on"))
-foreach ($n in "maps\levels.txt", "maps\secretlevels.txt", "data\gameplaymodifiers.json", "steam_api64.dll", "fmod.dll") { $p = Join-Path $BaronyPath $n; if (Test-Path $p) { $info += "$n sha256: " + (Get-FileHash $p).Hash } else { $info += "$n: MISSING" } }
+foreach ($n in "maps\levels.txt", "maps\secretlevels.txt", "data\gameplaymodifiers.json", "steam_api64.dll", "fmod.dll") { $p = Join-Path $BaronyPath $n; if (Test-Path $p) { $info += "$n sha256: " + (Get-FileHash $p).Hash } else { $info += "${n}: MISSING" } }
 $info += "steam running: " + [bool](Get-Process -Name steam -ErrorAction SilentlyContinue)
 $info | Set-Content (Join-Path $tmp "info.txt")
 $zip = Join-Path ([Environment]::GetFolderPath("Desktop")) "blitz-logs.zip"
