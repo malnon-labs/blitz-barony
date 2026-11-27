@@ -31,7 +31,7 @@ The installer is a small menu that backs up every file it replaces, installs the
 The menu also has **2** (restore vanilla), **3** (collect logs for a bug report) and **4** (put a shortcut with the Barony icon on your Desktop).
 
 <p align="center">
-  <img src="docs/windows-install.png" alt="Blitz Barony menu in a Windows terminal" width="70%"><br>
+  <img src="docs/windows-install.png" alt="Blitz Barony menu in a Windows terminal" width="464"><br>
   <em>The Windows menu.</em>
 </p>
 
