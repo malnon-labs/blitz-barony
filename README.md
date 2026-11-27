@@ -29,7 +29,7 @@ The installer is a small menu that backs up every file it replaces, installs the
 ### Windows (Steam)
 
 1. In Steam, right-click Barony, choose **Manage**, then **Browse local files**. This opens the game folder (the one with `barony.exe`).
-2. Download `Blitz-Barony-Windows-<version>.zip` from the **Releases** page and extract it **into that folder**. Allow overwriting if asked. You get a `BLITZ BARONY.bat` and a `blitz-mod` folder next to `barony.exe`.
+2. Download `Blitz-Barony-Windows-<version>.zip` from the [**Releases**](../../releases/latest) page and extract it **into that folder**. Allow overwriting if asked. You get a `BLITZ BARONY.bat` and a `blitz-mod` folder next to `barony.exe`.
 3. Close Barony and double-click **`BLITZ BARONY.bat`**. Press **1** to install.
 4. Start Barony from Steam. The main menu should show **v5.0.2-blitz**.
 
@@ -40,8 +40,8 @@ The menu also has **2** (restore vanilla), **3** (collect logs for a bug report)
 Works for the native Linux Barony and for the Windows Barony under Proton.
 
 1. In Steam: Barony > Manage > **Browse local files**.
-2. Extract `Blitz-Barony-Linux-<version>.tar.gz` into that folder:
-   `tar xzf Blitz-Barony-Linux-<version>.tar.gz -C <that folder>`
+2. Download `Blitz-Barony-Linux-<version>.zip` (or `.tar.gz`) from the [**Releases**](../../releases/latest) page and extract it into that folder:
+   `unzip -o Blitz-Barony-Linux-<version>.zip -d <that folder>` (or `tar xzf Blitz-Barony-Linux-<version>.tar.gz -C <that folder>`)
 3. Close Barony. In a terminal, `cd` into the game folder and run:
    `bash "BLITZ BARONY.sh"`
    (Double-clicking it does nothing in some file managers, such as KDE Dolphin.)
