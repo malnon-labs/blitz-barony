@@ -2,6 +2,16 @@
 
 A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2). It makes the game shorter by removing stages and tweaking XP and gold values (along with a few other things), so the balance stays the same as vanilla. The details are listed at the [bottom of this page](#detailed-changes).
 
+What changes:
+
+- **Number of floors:** fewer floors per biome. Monsters and loot on each floor still match the vanilla depth that floor stands in for.
+- **Secrets:** every secret level is kept, with its entrance moved to fit the shorter layout.
+- **Minotaurs:** the chance of one appearing and the time before it arrives are adjusted.
+- **Shops:** the chance of a shop appearing is adjusted.
+- **XP:** scaled up with depth to make up for the missing floors.
+- **Gold:** scaled up on the randomly generated floors.
+- **Skills:** skill gain is scaled up.
+
 > **Status: private test build.** It is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
 
 ## Install
