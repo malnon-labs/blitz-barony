@@ -87,7 +87,7 @@ Use menu option **3** (Collect logs) right after the problem, before starting Ba
 
 ## Credits and license
 
-**Inspiration:** the idea comes from the Barotrauma mod [Flash Campaign](https://steamcommunity.com/sharedfiles/filedetails/?id=3104488752), which makes campaigns shorter, and from the new Blitz mode in Slay the Spire 2.
+Inspired by https://steamcommunity.com/sharedfiles/filedetails/?id=3104488752 and the Blitz mode for Slay the Spire 2
 
 Barony is made by Turning Wheel, and its source code is released under the BSD 2-Clause license. This mod is a modified build of that source. The overview images use screenshots and artwork from Barony and the [BaronyGame wiki](https://baronygame.fandom.com/), which belong to Turning Wheel. Barony's game files, art and sound are **not** included in the mod itself; the installer only adds the modified executable, a few libraries it needs, and three small data files.
 
