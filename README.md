@@ -6,9 +6,9 @@
 
 A shorter [Barony](https://store.steampowered.com/app/371970/Barony/) (v5.0.2).
 
-**Why this mod exists:** a complete Barony run can easily swallow 8 hours. You scour the early floors for every last gold pile, then coast through the rest of the game flattening everything in your way, and you still have to hunt for the exit on every floor. If that sounds familiar, this mod can hand a lot of that time back to you. Steam achievements keep working.
+**Why this mod exists:** a complete Barony run can easily swallow 8 hours. You scour the early floors for every last gold pile, then coast through the rest of the game flattening everything in your way, eventually turning into a dash to the exit on each remaining floor. If that sounds familiar, this mod can save you a lot of potentially wasted time. Does not disable Steam achievements.
 
-It shortens the game by cutting out floors and retuning XP and gold (plus a few smaller tweaks), so the balance stays just like vanilla. The details are listed at the [bottom of this page](#detailed-changes).
+It shortens the game by cutting out floors and tweaking XP and gold (plus a few smaller tweaks), so the balance stays just like vanilla. The details are listed at the [bottom of this page](#detailed-changes).
 
 What changes:
 
