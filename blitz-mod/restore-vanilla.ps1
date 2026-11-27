@@ -40,4 +40,4 @@ if (Test-Path $marker) {
 }
 Remove-Item $backup -Recurse -Force
 Write-Host ""
-Write-Host "Vanilla Barony restored. (Tip: Steam > Barony > Properties > Installed Files > Verify also works.)"
+Write-Host "Vanilla Barony restored. To install the mod again, open BLITZ BARONY.bat and press 1."

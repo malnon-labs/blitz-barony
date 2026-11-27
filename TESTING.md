@@ -3,9 +3,9 @@
 Thanks for testing. The main question right now: **does hosting and joining an online (Steam) lobby work without crashing?** Earlier builds crashed or refused to start because of mismatched Steam interface versions; v0.1.2 hosts a lobby fine on a Windows 11 test PC (solo host). Still untested: a second player joining.
 
 ## Before you start
-1. Install as described in blitz-mod\README.md (extract the zip into the Barony folder, double-click INSTALL BLITZ MOD.bat). Check the main menu shows `v5.0.2-blitz`.
+1. Install as described in blitz-mod\README.md (extract the zip into the Barony folder, double-click BLITZ BARONY.bat and press 1). Check the main menu shows `v5.0.2-blitz`.
 2. Steam must be running and you must be logged in (online lobbies need it).
-3. If anything goes wrong, double-click **`COLLECT LOGS.bat`** right afterwards (before relaunching the game: `log.txt` is overwritten on each start). It creates `blitz-logs.zip` on your Desktop. Send me that file.
+3. If anything goes wrong, open the **BLITZ BARONY** menu and press **3** (Collect logs) right afterwards (before relaunching the game: `log.txt` is overwritten on each start). It creates `blitz-logs.zip` on your Desktop. Send me that file.
 
 ## Test checklist (note PASS / FAIL for each)
 | # | Test | Expected |
@@ -17,12 +17,12 @@ Thanks for testing. The main question right now: **does hosting and joining an o
 | 5 | Start the game with 2 players, play floor 1-3 | No crash, both see the same monsters/items |
 | 6 | Optional: type `/enablecheats` then `/gotolevel 5` in the console (key `/`) | Jumps to floor 5 for both players |
 | 7 | Quit to menu, then Host again | Works a second time |
-| 8 | Run `RESTORE VANILLA.bat`, start Barony | Vanilla Barony, your normal saves |
+| 8 | Run menu option 2 (Restore vanilla), start Barony | Vanilla Barony, your normal saves |
 
 If you only have one PC: tests 1, 2, 7, 8 still tell me whether hosting works.
 
 ## What to send me
-Run `COLLECT LOGS.bat` after a failure (or after a clean session, if I ask), and send `blitz-logs.zip` together with a short note:
+Run the Collect logs option after a failure (or after a clean session, if I ask), and send `blitz-logs.zip` together with a short note:
 
 ```
 Windows version:

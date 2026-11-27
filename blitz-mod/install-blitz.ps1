@@ -72,4 +72,4 @@ if (-not (Test-Path $marker)) {
 }
 Write-Host ""
 Write-Host "Blitz Barony installed. Start Barony from Steam as usual; the main menu should show version v5.0.2-blitz."
-Write-Host "To go back to vanilla run restore-vanilla.bat."
+Write-Host "To go back to vanilla, open BLITZ BARONY.bat and press 2."
