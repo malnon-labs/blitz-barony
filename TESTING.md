@@ -1,6 +1,6 @@
 # Testing Blitz Barony
 
-Thanks for testing. The main question right now: **does hosting and joining an online (Steam) lobby work without crashing?** Earlier builds crashed about 4 seconds after creating an online lobby on Linux/Proton.
+Thanks for testing. The main question right now: **does hosting and joining an online (Steam) lobby work without crashing?** Earlier builds crashed or refused to start because of mismatched Steam interface versions; v0.1.2 hosts a lobby fine on a Windows 11 test PC (solo host). Still untested: a second player joining.
 
 ## Before you start
 1. Install as described in [README.md](README.md). Check the main menu shows `v5.0.2-blitz`.
