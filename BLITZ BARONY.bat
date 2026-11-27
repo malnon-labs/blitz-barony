@@ -1,7 +1,6 @@
 @echo off
 title Blitz Barony
 cd /d "%~dp0"
-set "msg="
 :menu
 cls
 echo ==============================================
@@ -13,8 +12,6 @@ goto st_end
 :st_on
 echo   Status: Blitz mod is INSTALLED
 :st_end
-if defined msg echo   %msg%
-set "msg="
 echo.
 echo   [1]  Install / update the Blitz mod
 echo   [2]  Restore vanilla Barony ^(undo the mod^)
@@ -30,33 +27,39 @@ if errorlevel 2 goto restore
 if errorlevel 1 goto install
 goto menu
 :install
-cls
+echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blitz-mod\install-blitz.ps1" -BaronyPath "%~dp0."
 if errorlevel 1 goto fail
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blitz-mod\create-shortcut.ps1" -BaronyPath "%~dp0." >nul 2>&1
-set "msg=Done - Blitz mod installed. Start Barony from Steam."
-goto menu
+goto done
 :restore
-cls
+echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blitz-mod\restore-vanilla.ps1" -BaronyPath "%~dp0."
 if errorlevel 1 goto fail
-set "msg=Done - vanilla Barony restored."
-goto menu
+goto done
 :logs
-cls
+echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blitz-mod\collect-logs.ps1" -BaronyPath "%~dp0."
 if errorlevel 1 goto fail
-set "msg=Done - blitz-logs.zip is on your Desktop."
-goto menu
+goto done
 :shortcut
-cls
+echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blitz-mod\create-shortcut.ps1" -BaronyPath "%~dp0."
 if errorlevel 1 goto fail
-set "msg=Done - shortcut put on your Desktop."
-goto menu
+goto done
 :fail
 echo.
 echo   Something went wrong - see the message above and send a screenshot.
+:done
+echo.
+call :showstatus
 echo.
 pause
 goto menu
+:showstatus
+if exist ".blitz_on" goto ss_on
+echo   Status now: vanilla Barony ^(mod NOT installed^)
+exit /b
+:ss_on
+echo   Status now: Blitz mod is INSTALLED
+exit /b
