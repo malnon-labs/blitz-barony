@@ -32,8 +32,7 @@ Works for the native Linux Barony and for the Windows Barony under Proton.
 4. Press **1** to install, then start Barony from Steam. The main menu should show **v5.0.2-blitz**.
 
 <p align="center">
-  <img src="docs/linux-menu.png" alt="Blitz Barony menu in a Linux terminal" width="46%">
-  <img src="docs/linux-install.png" alt="Installing the mod from the Linux menu" width="46%">
+  <img src="docs/linux-install.png" alt="Blitz Barony menu in a Linux terminal, after pressing 1 to install" width="70%">
 </p>
 
 ### Going back to vanilla
