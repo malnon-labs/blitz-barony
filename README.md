@@ -283,3 +283,7 @@ Number of minotaur floors in a full run (calculated from the 49% rolls):
 - The version string is `v5.0.2-blitz`. Internally the multiplayer join packet carries a short `v5.0.2b` marker, because the packet only has room for 8 characters.
 - The cheat console works after `/enablecheats`. `/gotolevel <n>` jumps to a floor from 1 to 24; `/jumplevel` does not work (see Known issues).
 - The installer touches only these files: `barony.exe` (or `barony.x86_64`), four runtime DLLs on Windows, `maps/levels.txt`, `maps/secretlevels.txt`, `data/gameplaymodifiers.json` and `data/blitz.cfg`. Originals are copied to `_blitz_backup` in the game folder first.
+
+---
+
+Maintained by Malnon Labs.
