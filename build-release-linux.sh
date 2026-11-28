@@ -10,8 +10,9 @@ cp "$SRC/build-steam/barony" "$M/payload-linux/barony.x86_64"
 cp "$SRC/build-win-steam/barony.exe" "$M/payload-windows/barony.exe"
 python3 "$H/sanitize.py" "$M/payload-linux/barony.x86_64" "$M/payload-windows/barony.exe"
 for d in libphysfs.dll libgcc_s_seh-1.dll libstdc++-6.dll libwinpthread-1.dll; do cp "$REL/$d" "$M/payload-windows/"; done
-cp "$SRC/mod/maps/levels.txt" "$SRC/mod/maps/secretlevels.txt" "$M/payload-common/maps/"; cp "$SRC/mod/data/gameplaymodifiers.json" "$M/payload-common/data/"
+cp "$SRC/mod/maps/levels.txt" "$SRC/mod/maps/secretlevels.txt" "$M/payload-common/maps/"; cp "$SRC/mod/data/gameplaymodifiers.json" "$SRC/mod/data/blitz.cfg" "$M/payload-common/data/"
 cp "$H/linux/BLITZ BARONY.sh" "$OUT/"; chmod +x "$OUT/BLITZ BARONY.sh"
-cp "$H/README.md" "$H/TESTING.md" "$M/"
+cp "$H/README.md" "$H/TESTING.md" "$H/BLITZ_CONFIG.md" "$M/"
 (cd "$OUT" && tar --owner=0 --group=0 -czf "$H/dist/Blitz-Barony-Linux-$V.tar.gz" .)
-echo "$H/dist/Blitz-Barony-Linux-$V.tar.gz"
+(cd "$OUT" && rm -f "$H/dist/Blitz-Barony-Linux-$V.zip" && zip -qr "$H/dist/Blitz-Barony-Linux-$V.zip" .)
+echo "$H/dist/Blitz-Barony-Linux-$V.tar.gz and .zip"

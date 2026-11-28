@@ -19,6 +19,9 @@ What changes:
 - **XP:** scaled up with depth to make up for the missing floors.
 - **Gold:** scaled up on the randomly generated floors.
 - **Skills:** skill gain is scaled up.
+- **Stations:** a cooking pot and a workbench can appear in more places, see [Stations](#stations).
+- **Adaptive XP:** XP is boosted when you fall behind and reduced when you level far ahead, so grinding does not pay off, see [Adaptive XP](#adaptive-xp).
+- **Settings file:** every number above can be changed in one plain text file, see [Settings](#settings).
 - **Achievements:** stay enabled.
 
 > This is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
@@ -31,14 +34,14 @@ The installer is a small menu that backs up every file it replaces, installs the
 
 1. In Steam, right-click Barony, choose **Manage**, then **Browse local files**. This opens the game folder (the one with `barony.exe`).
 2. Download `Blitz-Barony-Windows-<version>.zip` from the [**Releases**](../../releases/latest) page and extract it **into that folder**. Allow overwriting if asked. You get a `BLITZ BARONY.bat` and a `blitz-mod` folder next to `barony.exe`.
-3. Close Barony and double-click **`BLITZ BARONY.bat`**. Press **1** to install.
+3. Close Barony and double-click **`BLITZ BARONY.bat`**. Press **1** to install everything (or **2**, **3**, **4** to leave out the stations and/or adaptive XP, see [Install options](#install-options)).
 4. Start Barony from Steam. The main menu should show **v5.0.2-blitz**.
 
-The menu also has **2** (restore vanilla), **3** (collect logs for a bug report) and **4** (put a shortcut with the Barony icon on your Desktop).
+The menu also has **5** (restore vanilla), **6** (collect logs for a bug report) and **7** (put a shortcut with the Barony icon on your Desktop).
 
 <p align="center">
   <img src="docs/windows-install.png" alt="Blitz Barony menu in a Windows terminal" width="464"><br>
-  <em>The Windows menu.</em>
+  <em>The Windows menu (screenshot from an earlier version: the options are now numbered 1-7, see below).</em>
 </p>
 
 
@@ -46,7 +49,7 @@ The menu also has **2** (restore vanilla), **3** (collect logs for a bug report)
 
 <p align="center">
   <img src="docs/linux-install.png" alt="Blitz Barony menu in a Linux terminal after pressing 1 to install" width="70%"><br>
-  <em>The menu after pressing 1.</em>
+  <em>The menu after pressing 1 (screenshot from an earlier version: the options are now numbered 1-7, see below).</em>
 </p>
 
 Works for the native Linux Barony and for the Windows Barony under Proton.
@@ -57,12 +60,23 @@ Works for the native Linux Barony and for the Windows Barony under Proton.
 3. Close Barony. In a terminal, `cd` into the game folder and run:
    `bash "BLITZ BARONY.sh"`
    (Double-clicking it does nothing in some file managers, such as KDE Dolphin.)
-4. Press **1** to install, then start Barony from Steam. The main menu should show **v5.0.2-blitz**.
+4. Press **1** to install everything (see [Install options](#install-options) for the others), then start Barony from Steam. The main menu should show **v5.0.2-blitz**.
 
+
+### Install options
+
+| Menu | What you get |
+|---|---|
+| **1** All | Blitz + rebalanced stations + adaptive XP |
+| **2** Blitz only | the shortened game, XP and gold, with no adaptive XP and the original station rules |
+| **3** Blitz + rebalanced stations | no adaptive XP |
+| **4** Blitz + adaptive XP | the original station rules |
+
+You can run the menu again at any time to switch. Switching only changes the adaptive XP and station lines of your settings file and keeps your other edits.
 
 ### Going back to vanilla
 
-Open the same menu and press **2**. Every original file is put back, the mod's files are removed, and your vanilla saves return. Steam's "Verify integrity of game files" also restores vanilla. You can install again afterwards.
+Open the same menu and press **5**. Every original file is put back, the mod's files are removed, and your vanilla saves return. Steam's "Verify integrity of game files" also restores vanilla. You can install again afterwards.
 
 ## Multiplayer
 
@@ -71,15 +85,26 @@ Open the same menu and press **2**. Every original file is put back, the mod's f
 - Steam achievements keep working while the mod is installed (cheats still disable them, as in vanilla).
 - Saves from vanilla do not carry over. Start a new game.
 
+## Settings
+
+All numbers are in `data/blitz.cfg` in the Barony folder: one setting per line with a comment saying what it does.
+
+```
+station_transition_percent = 50   # chance of a cooking pot in the chest room of each transition floor
+adaptive_xp = 1                   # 1 = on, 0 = off
+```
+
+Save it and enter a new floor; no restart needed. The full list is in [BLITZ_CONFIG.md](BLITZ_CONFIG.md).
+
 ## Reporting a problem
 
-Use menu option **3** (Collect logs) right after the problem, before starting Barony again, and send the file it creates. See [TESTING.md](TESTING.md) for a short test checklist and a report template.
+Use menu option **6** (Collect logs) right after the problem, before starting Barony again, and send the file it creates. See [TESTING.md](TESTING.md) for a short test checklist and a report template.
 
 ## Common mistakes
 
 - *"I subscribed to the Workshop item, why is nothing different?"* Subscribing only downloads the files. Run the installer (see Install above).
 - *Only the host installed it.* Every player needs the same install.
-- *Barony updated and the mod stopped working.* Press **2** (restore vanilla), then **1** (install) again, or verify the game files in Steam.
+- *Barony updated and the mod stopped working.* Press **5** (restore vanilla), then **1** (install) again, or verify the game files in Steam.
 
 ## Known issues
 
@@ -169,6 +194,36 @@ Floors 1, 5, 19 and 22 (the first floor of the Mines, Swamp, Caves and Citadel) 
 - Dark floors keep the vanilla 25% chance, but the first floor of each biome is never dark.
 - Hunger and regeneration are per-time mechanics and were left alone.
 
+### Stations
+
+Cooking pots (cauldrons) and workbenches work as in vanilla. The mod changes where they appear so that every part of the run has a chance at both:
+
+| Where | What | Chance |
+|---|---|---|
+| The 4 transition floors (4, 8, 11, 21) | cooking pot in the small chest room | 50% each |
+| The last generated floor of each biome (3, 7, 10, 13, 16, 20, 23) | workbench in the arrival room | 50% each |
+| Each biome | one extra random pot or workbench on a normal floor | 33% per biome |
+| The Hamlet (18) | cooking pot in the food shop and workbench in the weapon shop | always |
+| The Underworld sections | one cooking pot per pair, as before | unchanged |
+
+Transitions get no workbench because you have no scrap there yet. The roll is made from the map seed, so every player in a multiplayer game sees the same stations, and re-entering the same floor in the same game gives the same result.
+
+### Adaptive XP
+
+A second XP multiplier, worked out per player on every kill, is applied on top of the depth curve. It compares your level with the level a typical player has at that depth:
+
+| Vanilla depth | 2 | 7 | 10 | 14 | 20 | 26 | 30 | 35 |
+|---|---|---|---|---|---|---|---|---|
+| Target level | 3 | 12 | 18 | 24 | 34 | 43 | 50 | 60 |
+
+The target comes from the average of the daily leaderboard winners (level about 62 at the end) and from test runs. The multiplier is:
+
+- **on target:** x1.0
+- **15 or more levels behind:** x2.0 (a straight line in between)
+- **15 or more levels ahead:** x0.4, never lower (a straight line in between)
+
+Example at vanilla depth 12 (target 21): level 1 gets x2.0, level 21 gets x1.0, level 36 or more gets x0.4. In tests a character at level 1 dropped onto the Labyrinth reached about level 18 by the end of that floor killing monsters one at a time, while a level 67 character gained a single level on a whole later floor. All numbers are in the settings file, and `adaptive_xp = 0` turns it off.
+
 ### Shops
 
 <p align="center">
@@ -221,4 +276,4 @@ Number of minotaur floors in a full run (calculated from the 49% rolls):
 
 - The version string is `v5.0.2-blitz`. Internally the multiplayer join packet carries a short `v5.0.2b` marker, because the packet only has room for 8 characters.
 - The cheat console works after `/enablecheats`. `/gotolevel <n>` jumps to a floor from 1 to 24; `/jumplevel` does not work (see Known issues).
-- The installer touches only these files: `barony.exe` (or `barony.x86_64`), four runtime DLLs on Windows, `maps/levels.txt`, `maps/secretlevels.txt` and `data/gameplaymodifiers.json`. Originals are copied to `_blitz_backup` in the game folder first.
+- The installer touches only these files: `barony.exe` (or `barony.x86_64`), four runtime DLLs on Windows, `maps/levels.txt`, `maps/secretlevels.txt`, `data/gameplaymodifiers.json` and `data/blitz.cfg`. Originals are copied to `_blitz_backup` in the game folder first.

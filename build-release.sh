@@ -8,8 +8,8 @@ cp "$SRC/build-win-steam/barony.exe" "$OUT/blitz-mod/payload/barony.exe"
 python3 "$H/sanitize.py" "$OUT/blitz-mod/payload/barony.exe"
 for d in libphysfs.dll libgcc_s_seh-1.dll libstdc++-6.dll libwinpthread-1.dll; do cp "$REL/$d" "$OUT/blitz-mod/payload/"; done
 cp "$SRC/mod/levels.txt" "$SRC/mod/secretlevels.txt" "$OUT/blitz-mod/payload/maps/" 2>/dev/null || cp "$REL/maps/"*.txt "$OUT/blitz-mod/payload/maps/"
-cp "$SRC/mod/data/gameplaymodifiers.json" "$OUT/blitz-mod/payload/data/" 2>/dev/null || cp "$REL/data/gameplaymodifiers.json" "$OUT/blitz-mod/payload/data/"
-cp "$H"/blitz-mod/*.ps1 "$H/README.md" "$H/TESTING.md" "$OUT/blitz-mod/"
+cp "$SRC/mod/data/gameplaymodifiers.json" "$SRC/mod/data/blitz.cfg" "$OUT/blitz-mod/payload/data/"
+cp "$H"/blitz-mod/*.ps1 "$H/README.md" "$H/TESTING.md" "$H/BLITZ_CONFIG.md" "$OUT/blitz-mod/"
 cp "$H/BLITZ BARONY.bat" "$OUT/"
 # flat zip: extract it straight INTO the Barony game folder
 (cd "$OUT" && rm -f "$H/dist/Blitz-Barony-Windows-$V.zip" && zip -qr "$H/dist/Blitz-Barony-Windows-$V.zip" .)

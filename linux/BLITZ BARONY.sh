@@ -44,7 +44,25 @@ payload_files() {   # prints "srcfile<TAB>relative target"
   done
 }
 
+# Sets "key = value" in a blitz.cfg and keeps the comment after it
+set_cfg() { sed -i -E "s/^($2[[:space:]]*=[[:space:]]*)[^[:space:]#]+/\\1$3/" "$1"; }
+apply_preset() {   # all = Blitz + rebalanced stations + adaptive XP | blitz = Blitz only | stations = Blitz + rebalanced stations | xp = Blitz + adaptive XP
+  local cfg="$BASE/data/blitz.cfg" xp=0 st=0
+  [ -f "$cfg" ] || return 0
+  case "$1" in all) xp=1; st=1;; blitz) ;; stations) st=1;; xp) xp=1;; esac
+  set_cfg "$cfg" adaptive_xp "$xp"
+  if [ "$st" = 1 ]; then
+    set_cfg "$cfg" station_transition_percent 50; set_cfg "$cfg" station_workbench_last_floor_percent 50; set_cfg "$cfg" station_biome_percent 33
+    set_cfg "$cfg" station_hamlet_cauldron 1; set_cfg "$cfg" station_hamlet_workbench 1
+  else
+    set_cfg "$cfg" station_transition_percent 0; set_cfg "$cfg" station_workbench_last_floor_percent 0; set_cfg "$cfg" station_biome_percent 100
+    set_cfg "$cfg" station_hamlet_cauldron 0; set_cfg "$cfg" station_hamlet_workbench 0
+  fi
+  echo "  preset '$1' applied to data/blitz.cfg"
+}
+
 do_install() {
+  local preset="${1:-all}"
   running && { echo "Close Barony first."; return 1; }
   [ -d "$MOD" ] || { echo "blitz-mod-linux folder not found next to this script. Extract the whole archive first."; return 1; }
   local bk="$BASE/_blitz_backup"; mkdir -p "$bk"
@@ -52,6 +70,7 @@ do_install() {
   echo "Barony folder: $BASE"
   while IFS=$'\t' read -r src rel; do
     dst="$BASE/$rel"
+    if [ "$rel" = "data/blitz.cfg" ] && installed && [ -e "$dst" ]; then echo "  kept your existing data/blitz.cfg"; continue; fi   # never overwrite the player's settings on update
     if [ -e "$dst" ]; then
       if ! cmp -s "$src" "$dst" && ! { installed && [ -e "$bk/$rel" ]; }; then            # not ours yet: it is the vanilla file, keep it as backup
         mkdir -p "$(dirname "$bk/$rel")"; cp -a "$dst" "$bk/$rel"
@@ -63,6 +82,7 @@ do_install() {
     mkdir -p "$(dirname "$dst")"; cp -f "$src" "$dst"
     echo "  installed $rel"
   done < <(payload_files)
+  apply_preset "$preset"
   [ -f "$BASE/barony.x86_64" ] && chmod +x "$BASE/barony.x86_64"
   if ! installed; then                           # keep vanilla and Blitz saves apart
     : > "$BASE/.blitz_on"
@@ -72,7 +92,8 @@ do_install() {
       if [ -d "$sv.blitz" ]; then mv "$sv.blitz" "$sv"; else mkdir -p "$sv"; fi
     done < <(save_dirs)
   fi
-  echo; echo "Blitz Barony installed. Start Barony from Steam as usual; the main menu should show v5.0.2-blitz."
+  echo; echo "Blitz Barony installed (preset: $preset). Start Barony from Steam as usual; the main menu should show v5.0.2-blitz."
+  echo "Fine tuning: edit data/blitz.cfg in the Barony folder (one setting per line, with comments)."
 }
 
 do_restore() {
@@ -106,7 +127,7 @@ do_logs() {
   {
     echo "date: $(date)"; echo "kernel: $(uname -a)"; echo "barony folder: $BASE"
     for e in barony.x86_64 barony.exe; do [ -f "$BASE/$e" ] && echo "$e sha256: $(sha256sum "$BASE/$e" | cut -d' ' -f1)"; done
-    for f in maps/levels.txt maps/secretlevels.txt data/gameplaymodifiers.json; do
+    for f in maps/levels.txt maps/secretlevels.txt data/gameplaymodifiers.json data/blitz.cfg; do
       [ -f "$BASE/$f" ] && echo "$f sha256: $(sha256sum "$BASE/$f" | cut -d' ' -f1)" || echo "$f: MISSING"
     done
     echo "blitz marker: $([ -f "$BASE/.blitz_on" ] && echo yes || echo no)"
@@ -151,20 +172,28 @@ while true; do
   echo "  $(status_line)"
   echo "  Folder: $BASE"
   echo
-  echo "  [1]  Install / update the Blitz mod"
-  echo "  [2]  Restore vanilla Barony (undo the mod)"
-  echo "  [3]  Collect logs (for a bug report)"
-  echo "  [4]  Put a launcher for this menu on the Desktop"
+  echo "  [1]  Install / update: ALL (Blitz + rebalanced stations + adaptive XP)"
+  echo "  [2]  Install / update: Blitz only"
+  echo "  [3]  Install / update: Blitz + rebalanced stations"
+  echo "  [4]  Install / update: Blitz + adaptive XP"
+  echo "  [5]  Restore vanilla Barony (undo the mod)"
+  echo "  [6]  Collect logs (for a bug report)"
+  echo "  [7]  Put a launcher for this menu on the Desktop"
   echo "  [Q]  Quit"
   echo
-  read -r -n1 -s -p "Choose 1-4 or Q: " c || { echo; exit 0; }; echo
+  echo "  Fine tuning: edit data/blitz.cfg in the Barony folder (one setting per line, with comments)."
+  echo
+  read -r -n1 -s -p "Choose 1-7 or Q: " c || { echo; exit 0; }; echo
   case "$c" in
-    1) echo; do_install ;;
-    2) echo; do_restore ;;
-    3) echo; do_logs ;;
-    4) echo; do_launcher ;;
+    1) echo; do_install all ;;
+    2) echo; do_install blitz ;;
+    3) echo; do_install stations ;;
+    4) echo; do_install xp ;;
+    5) echo; do_restore ;;
+    6) echo; do_logs ;;
+    7) echo; do_launcher ;;
     q|Q) exit 0 ;;
-    *) continue ;;
+  *) continue ;;
   esac
   echo; echo "  Status now: $(status_line | sed 's/^Status: //')"
   pause
