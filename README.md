@@ -21,10 +21,10 @@ What changes:
 - **Skills:** skill gain is scaled up.
 - **Stations (optional rebalance tweak):** a cooking pot and a workbench can appear in more places, see [Stations](#stations).
 - **Adaptive XP (optional rebalance tweak):** XP is boosted when you fall behind and reduced when you level far ahead, so grinding does not pay off, see [Adaptive XP](#adaptive-xp).
-
-The stations and adaptive XP are optional extras on top of the shortened game: pick the install option you like (see [Install options](#install-options)) or switch either one off in the [settings file](#settings) at any time.
 - **Settings file:** every number above can be changed in one plain text file, see [Settings](#settings).
 - **Achievements:** stay enabled.
+
+The stations and adaptive XP are optional extras on top of the shortened game: pick the install option you like (see [Install options](#install-options)) or switch either one off in the [settings file](#settings) at any time.
 
 > This is an unofficial mod and is not affiliated with Turning Wheel. You need your own copy of Barony from Steam. No game assets are included.
 
