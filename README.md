@@ -19,8 +19,10 @@ What changes:
 - **XP:** scaled up with depth to make up for the missing floors.
 - **Gold:** scaled up on the randomly generated floors.
 - **Skills:** skill gain is scaled up.
-- **Stations:** a cooking pot and a workbench can appear in more places, see [Stations](#stations).
-- **Adaptive XP:** XP is boosted when you fall behind and reduced when you level far ahead, so grinding does not pay off, see [Adaptive XP](#adaptive-xp).
+- **Stations (optional rebalance tweak):** a cooking pot and a workbench can appear in more places, see [Stations](#stations).
+- **Adaptive XP (optional rebalance tweak):** XP is boosted when you fall behind and reduced when you level far ahead, so grinding does not pay off, see [Adaptive XP](#adaptive-xp).
+
+The stations and adaptive XP are optional extras on top of the shortened game: pick the install option you like (see [Install options](#install-options)) or switch either one off in the [settings file](#settings) at any time.
 - **Settings file:** every number above can be changed in one plain text file, see [Settings](#settings).
 - **Achievements:** stay enabled.
 
@@ -196,6 +198,8 @@ Floors 1, 5, 19 and 22 (the first floor of the Mines, Swamp, Caves and Citadel) 
 
 ### Stations
 
+*Optional rebalance tweak: leave it out with install option 2 or 4, or set the station chances to 0 in the settings file.*
+
 Cooking pots (cauldrons) and workbenches work as in vanilla. The mod changes where they appear so that every part of the run has a chance at both:
 
 | Where | What | Chance |
@@ -209,6 +213,8 @@ Cooking pots (cauldrons) and workbenches work as in vanilla. The mod changes whe
 Transitions get no workbench because you have no scrap there yet. The roll is made from the map seed, so every player in a multiplayer game sees the same stations, and re-entering the same floor in the same game gives the same result.
 
 ### Adaptive XP
+
+*Optional rebalance tweak: leave it out with install option 2 or 3, or set `adaptive_xp = 0` in the settings file.*
 
 A second XP multiplier, worked out per player on every kill, is applied on top of the depth curve. It compares your level with the level a typical player has at that depth:
 
