@@ -49,7 +49,7 @@ The menu also has **5** (restore vanilla), **6** (collect logs for a bug report)
 
 <p align="center">
   <img src="docs/linux-install.png" alt="Blitz Barony menu in a Linux terminal after pressing 1 to install" width="70%"><br>
-  <em>The menu after pressing 1 (screenshot from an earlier version: the options are now numbered 1-7, see below).</em>
+  <em>The menu after pressing 1.</em>
 </p>
 
 Works for the native Linux Barony and for the Windows Barony under Proton.
